@@ -26,15 +26,10 @@ def predict_label(img_path):
 	confidence_score = np.max(p) * 100
 	return dic[predict_index], confidence_score
 
-
 # routes
 @app.route("/", methods=['GET', 'POST'])
 def main():
 	return render_template("index.html")
-
-@app.route("/about")
-def about_page():
-	return "Please subscribe  Artificial Intelligence Hub..!!!"
 
 @app.route("/submit", methods = ['GET', 'POST'])
 def get_output():
@@ -48,5 +43,4 @@ def get_output():
 
 
 if __name__ =='__main__':
-	#app.debug = True
 	app.run(debug = True)
