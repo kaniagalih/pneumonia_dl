@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +11,7 @@
 <body>
 
 <div class="container">
-  <h1 class="jumbotron bg-primary">Pneumonia Classification</h1>
+  <h1 class="jumbotron bg-primary text-center">Pneumonia Classification</h1>
   <br><br>
   <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
 
@@ -30,26 +29,16 @@
     </div>
   </form>
 
-	{% if prediction %}
-  <img src="{{img_path}}" height="224px" width="224px">
-	<h2> Your Prediction   : <i> {{prediction}} </i></h2>
-
-	{% endif %}
+  {% if prediction %}
+    <div class="row text-center">
+      <div class="col-sm-12">
+        <img src="{{img_path}}" height="224px" width="224px" class="mx-auto d-block">
+        <h2>Prediction Result: <i>{{prediction}} %</i></h2>
+      </div>
+    </div>
+  {% endif %}
 
 </div>
 
-
-
-
-
-
-
 </body>
 </html>
-
-
-
-
-
-
-
